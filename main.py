@@ -5,7 +5,7 @@ from post_generator import generate_post
 
 # Options for length and language
 length_options = ["Short", "Medium", "Long"]
-language_options = ["English", "Hinglish"]
+language_options = ["English", "English"]
 
 
 # Main app layout

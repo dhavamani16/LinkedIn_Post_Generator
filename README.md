@@ -14,5 +14,6 @@ This tool will analyze posts of a LinkedIn influencer and help them create the n
    ```commandline
    streamlit run main.py
    ```
-Copyright (C) Codebasics Inc. All rights reserved.
+---
+⭐ If you like this project, don’t forget to give it a star on GitHub!
 

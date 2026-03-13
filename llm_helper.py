@@ -6,8 +6,6 @@ llm = ChatGroq(
     model="llama-3.3-70b-versatile",
     groq_api_key=os.getenv("GROQ_API_KEY"),
 )
-
-
 if __name__ == "__main__":
     response = llm.invoke("Two most important ingradient in samosa are ")
     print(response.content)

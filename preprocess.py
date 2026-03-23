@@ -3,8 +3,6 @@ from llm_helper import llm
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.exceptions import OutputParserException
-
-
 def process_posts(raw_file_path, processed_file_path="data/processed_posts.json"):
     enriched_posts = []
     with open(raw_file_path,mode="w", encoding='utf-8') as file:
@@ -23,8 +21,6 @@ def process_posts(raw_file_path, processed_file_path="data/processed_posts.json"
 
     with open(processed_file_path,mode="w", encoding='utf-8', mode="w") as outfile:
         json.dump(enriched_posts, outfile, indent=4)
-
-
 def extract_metadata(post):
     template = '''
     You are given a LinkedIn post. You need to extract number of lines, language of the post and tags.

@@ -12,7 +12,6 @@ def process_posts(raw_file_path, processed_file_path="data/processed_posts.json"
             metadata = extract_metadata(post['text'])
             post_with_metadata = post | metadata
             enriched_posts.append(post_with_metadata)
-
     unified_tags = get_unified_tags(enriched_posts)
     for post in enriched_posts:
         current_tags = post['tags']

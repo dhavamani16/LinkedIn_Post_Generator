@@ -31,7 +31,6 @@ def extract_metadata(post):
     Here is the actual post on which you need to perform this task:  
     {post}
     '''
-
     pt = PromptTemplate.from_template(template)
     chain = pt | llm
     response = chain.invoke(input={"post": post})

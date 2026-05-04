@@ -17,7 +17,6 @@ def process_posts(raw_file_path, processed_file_path="data/processed_posts.json"
         current_tags = post['tags']
         new_tags = {unified_tags[tag] for tag in current_tags}
         post['tags'] = list(new_tags)
-
     with open(processed_file_path,mode="w", encoding='utf-8', mode="w") as outfile:
         json.dump(enriched_posts, outfile, indent=4)
 def extract_metadata(post):
@@ -41,8 +40,6 @@ def extract_metadata(post):
     except OutputParserException:
         raise OutputParserException("Context too big. Unable to parse jobs.")
     return res
-
-
 def get_unified_tags(posts_with_metadata):
     unique_tags = set()
     # Loop through each post and extract the tags
@@ -74,7 +71,5 @@ def get_unified_tags(posts_with_metadata):
     except OutputParserException:
         raise OutputParserException("Context too big. Unable to parse jobs.")
     return res
-
-
 if __name__ == "__main__":
     process_posts("data/raw_posts.json", "data/processed_posts.json")

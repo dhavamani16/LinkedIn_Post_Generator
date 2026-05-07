@@ -5,7 +5,6 @@ class FewShotPosts:
         self.df = None
         self.unique_tags = None
         self.load_posts(file_path)
-
     def load_posts(self, file_path):
         with open(file_path, encoding="utf-8") as f:
             posts = json.load(f)
@@ -22,7 +21,6 @@ class FewShotPosts:
             (self.df['length'] == length)  
         ]
         return df_filtered.to_dict(orient='records')
-
     def categorize_length(self, line_count):
         if line_count < 5:
             return "Short"
@@ -30,12 +28,9 @@ class FewShotPosts:
             return "Medium"
         else:
             return "Long"
-
     def get_tags(self):
         return self.unique_tags
-
-
-if __name__ == "__main__":
+    if __name__ == "__main__":
     fs = FewShotPosts()
     # print(fs.get_tags())
     posts = fs.get_filtered_posts("Medium","Hinglish","Job Search")
